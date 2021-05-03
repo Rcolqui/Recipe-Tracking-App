@@ -13,13 +13,13 @@ import javax.validation.Valid;
 @Controller
 public class UserController {
 
-
+//Needs work
     @GetMapping
     public String displayLoginForm(Model model) {
         model.addAttribute(new User());
-        return "login";
+        return "user/login";
     }
-
+//Needs work
     @PostMapping
     public String processLoginForm(Model model, @ModelAttribute @Valid User user, Errors errors, String password) {
 
@@ -28,18 +28,18 @@ public class UserController {
         }
         else {
             model.addAttribute("error", "The password or username is incorrect");
-            return "login";
+            return "user/login";
         }
     }
 
-    @GetMapping("/add")
+    @GetMapping("user/add")
     public String displayAddUserForm(Model model) {
 
         model.addAttribute(new User());
-        return "add";
+        return "user/add";
     }
 
-    @PostMapping("/add")
+    @PostMapping("user/add")
     public String processAddUserForm(Model model, @ModelAttribute @Valid User user, Errors errors, String verify) {
 
         if (user.getPassword().equals(verify) && !errors.hasErrors()) {
@@ -47,7 +47,7 @@ public class UserController {
         }
         else {
             model.addAttribute("error", "Passwords do not match");
-            return "add";
+            return "user/add";
         }
     }
 }

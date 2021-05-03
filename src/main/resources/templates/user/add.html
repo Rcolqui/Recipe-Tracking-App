@@ -2,12 +2,12 @@
 <html lang="en" xmlns:th = "http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
-        <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
     <title>Sign Up</title>
 </head>
 <body>
-<form method = 'post' th:action="@{/add}">
-<!--    <form method = 'post'>-->
+<form method = 'post' th:action="@{/user/add}">
+
     <label>
         Username:
         <input type = 'text' th:field="${user.username}">
