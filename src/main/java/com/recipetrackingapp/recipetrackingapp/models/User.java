@@ -1,10 +1,15 @@
 package com.recipetrackingapp.recipetrackingapp.models;
 
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-public class User {
+@Entity
+@Table(name = "users")
+public class User extends AbstractEntity {
+
+
     @NotBlank
     @Size(min = 5, max = 15)
     private String username;
@@ -30,6 +35,7 @@ public class User {
         this.email = email;
         this.password = password;
     }
+
 
     public String getUsername() {
         return username;

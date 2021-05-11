@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <title>The Digital Cookbook</title>
+</head>
+<body>
+<form method = "post">
+
+
+<p th:text = "'You are now viewing your recipe list'"></p>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+
+            <th>Recipes</th>
+
+        </tr>
+        </thead>
+        <tr th:each="recipe : ${recipes}">
+            <td th:text="${recipe.name}"></td>
+
+        </tr>
+    </table>
+
+
+    <div class="form-group">
+        <input type="submit" value="Create New Recipe" class="btn btn-success">
+    </div>
+</form>
+</body>
+</html>
